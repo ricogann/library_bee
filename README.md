@@ -35,6 +35,7 @@ Setelah itu anda dapat akses API yang ada di server, list dari API adalah sebaga
 ### 2. Auth
    ```
     http://localhost:3000/api/auth/register
+    ###
     Request
     multipart/form-data : {
          name_member: "Rico Putra Anugerah",
@@ -49,6 +50,7 @@ Setelah itu anda dapat akses API yang ada di server, list dari API adalah sebaga
     }
 
    http://localhost:3000/api/auth/login
+   ###
    Request
    JSON   : {
       "email_member": "rico.putra95@gmail.com"
@@ -63,9 +65,21 @@ Setelah itu anda dapat akses API yang ada di server, list dari API adalah sebaga
          28gUHV0cmEgQW51Z2VyYWgiLCJpYXQiOjE2OTA1MDUxMjksImV4cCI6MTY5MDU5MTUyOX0.pO3ldD6ouzI1MJABi3lUZKInCO5o2iVLv10Q7u4FGoY"
       }
    }
-    http://localhost:3000/api/auth/destroy/:id
+
+   http://localhost:3000/api/auth/destroy/:id
+   ###
+   Request
+   http://localhost:3000/api/auth/destroy/4
+   Response
+   JSON   : {
+      status: true,
+      code: 200,
+      message: "Delete Success"
+   }
+   
    ```
 4. Books
-5. Stok
-6. Peminjaman
-7. Pengembalian
+   
+6. Stok
+7. Peminjaman
+8. Pengembalian
