@@ -65,9 +65,9 @@ class _pinjam {
 
             //Kode unik untuk struk peminjaman yang digunakan di id_pengembalian
             let boolean = false;
+            let id_pengembalian = "";
             while (boolean == false) {
-                const id_pengembalian =
-                    "B" + Math.floor(Math.random() * 100000);
+                id_pengembalian = "B" + Math.floor(Math.random() * 100000);
                 const check = await prisma.transaksi_pengembalian.findUnique({
                     where: {
                         id_pengembalian: id_pengembalian.toString(),
@@ -94,7 +94,12 @@ class _pinjam {
             return {
                 status: true,
                 code: 201,
-                message: "Pinjam buku sukses",
+                message:
+                    "Terima kasih, ini struk pembelian anda. Tunjukkan Kode Unik ketika mengembalikan buku. " +
+                    "Kode Unik: " +
+                    id_pengembalian.toString() +
+                    " Tanggal Pengembalian" +
+                    temp_perhitungan,
             };
         } catch (error) {
             console.error("addPinjam pinjam module Error: ", error);
