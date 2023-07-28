@@ -243,6 +243,7 @@ Setelah itu anda dapat akses API yang ada di server, list dari API adalah sebaga
     }
    
 ### 6. Peminjaman
+
     http://localhost:3000/api/pinjam
     POST
     Request
@@ -256,7 +257,132 @@ Setelah itu anda dapat akses API yang ada di server, list dari API adalah sebaga
           "status"   : true,
           "message"  : "Pinjam buku sukses"
     }
+    
+    http://localhost:3000/api/pinjam
+    {
+    "status": true,
+    "message": "Get data success",
+    "data": [
+        {
+            "nama_peminjam": "Rico Putra Anugerah",
+            "buku_dipinjam": "LALALA",
+            "tanggal_pinjam": "2023-07-28T00:00:00.000Z",
+            "durasi_pinjam": "5 hari"
+        },
+        {
+            "nama_peminjam": "Rico Putra Anugerah",
+            "buku_dipinjam": "LALALA,YEYEYE",
+            "tanggal_pinjam": "2023-07-28T00:00:00.000Z",
+            "durasi_pinjam": "5 hari"
+        },
+        {
+            "nama_peminjam": "Rico Putra Anugerah",
+            "buku_dipinjam": "LALALA,YEYEYE",
+            "tanggal_pinjam": "2023-07-27T21:45:39.613Z",
+            "durasi_pinjam": "5 hari"
+        },
+        {
+            "nama_peminjam": "Rico Putra Anugerah",
+            "buku_dipinjam": "LALALA,YEYEYE",
+            "tanggal_pinjam": "2023-07-27T22:10:27.304Z",
+            "durasi_pinjam": "5 hari"
+        },
+        {
+            "nama_peminjam": "Rico Putra Anugerah",
+            "buku_dipinjam": "LALALA,YEYEYE",
+            "tanggal_pinjam": "2023-07-27T22:10:38.553Z",
+            "durasi_pinjam": "5 hari"
+        },
+        {
+            "nama_peminjam": "Rico Putra Anugerah",
+            "buku_dipinjam": "LALALA,YEYEYE",
+            "tanggal_pinjam": "2023-07-27T22:11:05.903Z",
+            "durasi_pinjam": "5 hari"
+        },
+        {
+            "nama_peminjam": "Rico Putra Anugerah",
+            "buku_dipinjam": "LALALA,YEYEYE",
+            "tanggal_pinjam": "2023-07-27T22:11:22.282Z",
+            "durasi_pinjam": "5 hari"
+        },
+        {
+            "nama_peminjam": "Rico Putra Anugerah",
+            "buku_dipinjam": "LALALA,YEYEYE",
+            "tanggal_pinjam": "2023-07-27T22:12:39.670Z",
+            "durasi_pinjam": "5 hari"
+        },
+        {
+            "nama_peminjam": "Rico Putra Anugerah",
+            "buku_dipinjam": "LALALA,YEYEYE",
+            "tanggal_pinjam": "2023-07-27T22:14:17.948Z",
+            "durasi_pinjam": "5 hari"
+        },
+        {
+            "nama_peminjam": "Rico Putra Anugerah",
+            "buku_dipinjam": "LALALA,YEYEYE",
+            "tanggal_pinjam": "2023-07-27T22:17:01.222Z",
+            "durasi_pinjam": "5 hari"
+        },
+        {
+            "nama_peminjam": "Rico Putra Anugerah",
+            "buku_dipinjam": "LALALA,YEYEYE",
+            "tanggal_pinjam": "2023-07-27T22:25:21.443Z",
+            "durasi_pinjam": "5 hari"
+        },
+        {
+            "nama_peminjam": "Rico Putra Anugerah",
+            "buku_dipinjam": "LALALA,YEYEYE",
+            "tanggal_pinjam": "2023-07-27T22:25:45.803Z",
+            "durasi_pinjam": "5 hari"
+        },
+        {
+            "nama_peminjam": "Rico Putra Anugerah",
+            "buku_dipinjam": "LALALA,YEYEYE",
+            "tanggal_pinjam": "2023-07-27T22:26:04.173Z",
+            "durasi_pinjam": "5 hari"
+        },
+      ]
+   }
 
-   ---
-   
-10. Pengembalian
+### 7. Pengembalian
+    http://localhost:3000/api/pengembalian
+    Request
+    JSON   : {
+       "id_pengembalian": "B12345",
+       "borrowedBy": "Rico Putra Anugerah",
+       "id_books": [2,3],
+       "date_plan_pengembalian": "2023-07-28",
+       "status_pengembalian": true
+    }
+    Response
+    JSON   : {
+       "status": true,
+       "message": "Pengembalian buku sukses"
+    }
+
+    http://localhost:3000/api/pengembalian/B77330
+    PUT
+    Response
+    JSON   : {
+         "status"   : true,
+         "code"   : 201,
+         "message"   : "Update data success" 
+    }
+
+    ---
+    http://localhost:3000/api/pengembalian
+    GET
+    Response
+    JSON   : {
+    "status": true,
+    "data": [
+        {
+            "nama_peminjam": "Rico Putra Anugerah",
+            "buku_dipinjam": "LALALA,YEYEYE",
+            "tanggal_pengembalian_seharusnya": "2023-08-01T00:00:00.000Z",
+            "tanggal_pengembalian": "2023-07-27T23:49:06.599Z",
+            "denda": 0,
+            "keterangan": "Tidak terlambat, denda Rp. 0"
+        }
+     ]
+     }
