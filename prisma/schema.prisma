@@ -1,0 +1,58 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "mysql"
+  url      = env("DATABASE_URL")
+}
+
+model Books {
+  id_book               Int         @id @default(autoincrement())
+  title_book            String      @db.VarChar(100)
+  isbn_book             String      @unique @db.VarChar(20)
+  date_published_book   DateTime    
+  publisher_book        String      @db.VarChar(50)
+  author_book           String      @db.VarChar(50)
+  description_book      String      @db.Text
+  page_count_book       Int         @db.Int
+  format_book           String      @db.VarChar(20)
+  language_book         String      @db.VarChar(20)
+  cover_book            String      @db.VarChar(50)
+
+  stok                  Stok[]
+}
+
+model Member {
+    id_member       Int         @id @default(autoincrement())
+    name_member     String      @db.VarChar(50)
+    email_member    String      @unique @db.VarChar(50)
+    password_member String      @db.VarChar(100)
+    avatar_member   String      @db.VarChar(50)
+}
+
+model Stok {
+    id_stok             Int         @id @default(autoincrement())
+    book                Books       @relation(fields: [id_book], references: [id_book], onDelete: Cascade, onUpdate: Cascade)
+    id_book             Int         @unique @db.Int
+    total_stok_book     Int         @db.Int
+}
+
+model transaksi_pinjam {
+    id_pinjam           Int         @id @default(autoincrement())
+    borrowedBy          String      @db.VarChar(50)
+    id_books            String      @db.VarChar(30)
+    date_pinjam         DateTime    @default(now())
+    total_days_pinjam   Int
+}
+
+model transaksi_pengembalian {
+    id_pengembalian                String    @id @db.VarChar(30)
+    borrowedBy                     String    @db.VarChar(50)
+    id_books                       String    @db.VarChar(30)
+    date_plan_pengembalian         DateTime
+    date_actual_pengembalian       DateTime?  
+    denda_pengembalian             Int?
+    status_pengembalian            Boolean
+    keterangan_pengembalian        String?    @db.Text
+}
