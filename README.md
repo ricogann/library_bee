@@ -26,7 +26,7 @@ npm run dev
 ```
 Setelah itu anda dapat akses API yang ada di server, list dari API adalah sebagai berikut.
 
-1. Seeder
+### Seeder
    http://localhost:3000/api/seeder
    Seeder berisi 3 data, yaitu member, books, dan stok.  
 3. Auth
