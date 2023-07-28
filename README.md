@@ -223,8 +223,40 @@ Setelah itu anda dapat akses API yang ada di server, list dari API adalah sebaga
    http://localhost:3000/api/book/2
    Response
    JSON : {
-      
+         "status": true,
+         "code" : 200,
+         "message": "Book deleted Successfully"
+   }  
    ```
-6. Stok
-7. Peminjaman
-8. Pengembalian
+### 5. Stok
+    http://localhost:3000/api/stok
+    Request
+    JSON   : {
+       "id_book": 3,
+       "total_stok_book": 40
+    }
+    Response
+    JSON   : {
+       "status" : true,
+       "code"   : 201,
+       "message": "Stok Updated"
+    }
+   
+### 6. Peminjaman
+    http://localhost:3000/api/pinjam
+    POST
+    Request
+    JSON   : {
+         "borrowedBy"   : "Rico Putra Anugerah",
+         "id_books"   : [2,3],
+         "total_days_pinjam"   : 5
+    }
+    Response
+    JSON   : {
+          "status"   : true,
+          "message"  : "Pinjam buku sukses"
+    }
+
+   ---
+   
+10. Pengembalian
