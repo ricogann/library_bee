@@ -49,6 +49,7 @@ Setelah itu anda dapat akses API yang ada di server, list dari API adalah sebaga
          message: "Register Success"
     }
 
+   ---
    http://localhost:3000/api/auth/login
    ###
    Request
@@ -66,6 +67,7 @@ Setelah itu anda dapat akses API yang ada di server, list dari API adalah sebaga
       }
    }
 
+   ---
    http://localhost:3000/api/auth/destroy/:id
    ###
    Request
@@ -78,8 +80,10 @@ Setelah itu anda dapat akses API yang ada di server, list dari API adalah sebaga
    }
    
    ```
-4. Books
+### 4. Books
+   ```
    
+   ```
 6. Stok
 7. Peminjaman
 8. Pengembalian
