@@ -30,25 +30,39 @@ Setelah itu anda dapat akses API yang ada di server, list dari API adalah sebaga
 
 ### 1. Seeder
    ```
-   -http://localhost:3000/api/seeder
+   http://localhost:3000/api/seeder
    ```
 ### 2. Auth
    ```
     http://localhost:3000/api/auth/register
-    **Request** 
+    Request
     multipart/form-data : {
          name_member: "Rico Putra Anugerah",
          email_member: "rico.putra95@gmail.com",
          password_member: "123456",
          avatar_member = avatar.png
     }
-    **Response**
+    Response
     {
          status: true,
          message: "Register Success"
     }
 
-http://localhost:3000/api/auth/login
+   http://localhost:3000/api/auth/login
+   Request
+   JSON   : {
+      "email_member": "rico.putra95@gmail.com"
+      "password_member": "123456"
+   }
+   Response
+   JSON   : {
+      "status": true,
+      "data" : {
+         "message": "Login Success, here's your token",
+         "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZF9tZW1iZXIiOjEsImVtYWlsX21lbWJlciI6InJpY28ucHV0cmE5NUBnbWFpbC5jb20iLCJuYW1lX21lbWJlciI6IlJpY
+         28gUHV0cmEgQW51Z2VyYWgiLCJpYXQiOjE2OTA1MDUxMjksImV4cCI6MTY5MDU5MTUyOX0.pO3ldD6ouzI1MJABi3lUZKInCO5o2iVLv10Q7u4FGoY"
+      }
+   }
     http://localhost:3000/api/auth/destroy/:id
    ```
 4. Books
