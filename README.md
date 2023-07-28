@@ -35,14 +35,14 @@ Setelah itu anda dapat akses API yang ada di server, list dari API adalah sebaga
 ### 2. Auth
    ```
     http://localhost:3000/api/auth/register
-    Request 
+    **Request** 
     multipart/form-data : {
          name_member: "Rico Putra Anugerah",
          email_member: "rico.putra95@gmail.com",
          password_member: "123456",
          avatar_member = avatar.png
     }
-    Response
+    **Response**
     {
          status: true,
          message: "Register Success"
