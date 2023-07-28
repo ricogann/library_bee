@@ -35,8 +35,20 @@ Setelah itu anda dapat akses API yang ada di server, list dari API adalah sebaga
 ### 2. Auth
    ```
     http://localhost:3000/api/auth/register
-    multipart/form-data : { name_member: "Rico Putra Anugerah", email_member: "rico.putra95@gmail.com", password_member: "123456", avatar_member = avatar.png }
-    http://localhost:3000/api/auth/login
+    Request 
+    multipart/form-data : {
+         name_member: "Rico Putra Anugerah",
+         email_member: "rico.putra95@gmail.com",
+         password_member: "123456",
+         avatar_member = avatar.png
+    }
+    Response
+    {
+         status: true,
+         message: "Register Success"
+    }
+
+http://localhost:3000/api/auth/login
     http://localhost:3000/api/auth/destroy/:id
    ```
 4. Books
