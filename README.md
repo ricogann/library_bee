@@ -29,9 +29,3 @@ Setelah itu anda dapat akses API yang ada di server, list dari API adalah sebaga
 # Dokumentasi API
 https://documenter.getpostman.com/view/21361511/2s9XxsVwYz
 
-            "tanggal_pengembalian": "2023-07-27T23:49:06.599Z",
-            "denda": 0,
-            "keterangan": "Tidak terlambat, denda Rp. 0"
-        }
-     ]
-     }
