@@ -29,9 +29,12 @@ Setelah itu anda dapat akses API yang ada di server, list dari API adalah sebaga
 # List API
 
 ### 1. Seeder
-   http://localhost:3000/api/seeder
+   - http://localhost:3000/api/seeder
    Seeder berisi 3 data, yaitu member, books, dan stok.  
-3. Auth
+### 2. Auth
+    - http://localhost:3000/api/auth/register
+    - http://localhost:3000/api/auth/login
+    - http://localhost:3000/api/auth/destroy/:id
 4. Books
 5. Stok
 6. Peminjaman
