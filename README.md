@@ -29,3 +29,9 @@ Setelah itu anda dapat akses API yang ada di server, list dari API adalah sebaga
 # Dokumentasi API
 https://documenter.getpostman.com/view/21361511/2s9XxsVwYz
 
+# Maybe FAQ?
+1. Kenapa kok hanya addPinjam saja yang memakai authorization?
+   Saya berasumsi member disini hanya member dari perpustakaan, yang dimana aktivitas yang dilakukan member yaitu pinjam buku saja. Aktivitas lainnya seperti rekap data pinjam, rekap data pengembalian, menambah buku, update stok buku, pengembalian buku dilakukan oleh admin yang tidak dibuat akunnya. Maka dari itu selain pinjam buku tidak ada authorization.
+2. Kenapa kok ketika addPinjam ngepass data id_books dalam bentuk array?
+   Agar member dapat meminjam beberapa buku dalam satu waktu.
+
