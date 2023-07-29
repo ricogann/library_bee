@@ -59,7 +59,7 @@ class _auth {
             };
 
             const token = jwt.sign(payload, "jwt-secret-code", {
-                expiresIn: "1d",
+                expiresIn: "8h",
             });
 
             return {

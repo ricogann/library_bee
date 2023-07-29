@@ -12,6 +12,21 @@ class _pinjam {
 
             const validation = schema.validate(body);
 
+            const pengembalian = await prisma.transaksi_pengembalian.findFirst({
+                where: {
+                    borrowedBy: body.borrowedBy,
+                    status_pengembalian: true,
+                },
+            });
+
+            if (!pengembalian) {
+                return {
+                    status: false,
+                    code: 404,
+                    error: "Anda belum mengembalikan buku yang dipinjam",
+                };
+            }
+
             if (validation.error) {
                 const errorDetails = validation.error.details.map(
                     (detail) => detail.message

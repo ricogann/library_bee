@@ -12,7 +12,7 @@ pinjamController.post("/", authorization, async (req, res) => {
     return response.sendResponse(res, result);
 });
 
-pinjamController.get("/", authorization, async (req, res) => {
+pinjamController.get("/", async (req, res) => {
     const result = await m$pinjam.getPinjam();
 
     return response.sendResponse(res, result);
